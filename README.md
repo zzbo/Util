@@ -1,4 +1,4 @@
 Util
 ====
 
-Very useful javascript method
+Very useful javascript tools
