@@ -1,4 +1,3 @@
-
 function startsWith (original, str) {
     if (typeof String.prototype.startsWith != 'function') 
         return original.slice(0, str.length) == str;
@@ -17,7 +16,7 @@ function endsWith (original, str) {
     }
 }
 
-methods = {
+var methods = {
     startsWith : startsWith,
     endsWith : endsWith
 }
