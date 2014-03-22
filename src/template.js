@@ -1,5 +1,5 @@
 function template(str, data) {
- 
+ 	use strict;
         //get target dom
         var element = document.getElementById(str);
         if (element) {
@@ -26,9 +26,6 @@ function template(str, data) {
 		    }
 
 		    while(match = reg.exec(tpl)) {
-		    	console.log('num:' + match.index);
-		    	console.log("1:" + tpl.slice(cursor, match.index));
-		    	console.log("2:" + match[1]);
 		    	
 		        add(tpl.slice(cursor, match.index))(match[1], true);
 		        cursor = match.index + match[0].length;
@@ -39,7 +36,7 @@ function template(str, data) {
 		    return new Function(code.replace(/[\r\t\n]/g, '')).apply(data);
 		};
 };
-
+module.exports = template;
 /*
 #usage
 // ---------- data ----------
@@ -58,6 +55,7 @@ var data = {
         "time": "eee"
     }]
 };
+
 // ---------- html ----------
 <textarea id="barretDemo">
 <% for(var i = 0; i < this.posts.length; i++) {
